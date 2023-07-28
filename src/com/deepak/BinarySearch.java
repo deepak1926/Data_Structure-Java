@@ -5,20 +5,20 @@ public class BinarySearch {
         int[] arr = {12,23,45,67,89,91,99};
         System.out.println(binarysearch(arr,99));
     }
-    private static boolean binarysearch(@org.jetbrains.annotations.NotNull int[] arr, int item) {
+    private static int binarysearch( int[] arr, int item) {
         int start =0;
         int end = arr.length-1;
         int mid;
         while(start<=end){
             mid = (start+end)/2;
             if(item==arr[mid])
-                return true;
+                return mid;
             if(item>arr[mid]) {
-                start++;
+                start = mid+1;
             }else{
-               end--;
+               end = mid-1;
             }
         }
-        return false;
+        return -1;
     }
 }
